@@ -12,6 +12,8 @@ public class Block {
     public Block(String blockStyle, Color blockColor) {
         style = blockStyle;
         color = blockColor;
+
+        //
         state = initState(blockStyle);
     }
 
@@ -39,9 +41,19 @@ public class Block {
         this.state = state;
     }
 
+    /**
+     *
+     * @param bStyle
+     * @return
+     */
     private int initState(String bStyle) {
-        if (bStyle.equals(""))
-
-
+        if (bStyle.equals("empty"))
+            return 0;
+        else if (bStyle.equals("liquid"))
+            return 1;
+        else if (bStyle.equals("solid"))
+            return 2;
+        else
+            return 3;
     }
 }
